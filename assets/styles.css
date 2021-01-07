@@ -92,6 +92,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .list-menu {
@@ -101,6 +102,7 @@
     justify-content: space-between;
     align-items: center;
     height: 500px;
+    width: 100%;
 }
 
 .list-menu hr {
@@ -109,6 +111,20 @@
 
 .menu-item span {
     display: none;
+}
+
+.menu-item {
+    width: 100%;
+    height: 10%;
+    transition: 0.2s all ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-item:hover {
+    background-color: grey;
+    cursor: pointer;
 }
 
 .page {
@@ -175,8 +191,11 @@
     justify-content: space-around;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     color: #252733;
-    height: 100px;
+    height: 120px;
+    transition: .2s all ease;
 }
 
 .box>.number {
@@ -185,7 +204,7 @@
     font-size: 40px;
 }
 
-.box>span {
+.box>span:not(.number) {
     font-weight: bold;
     font-size: 19px;
     color: #9FA2B4;
@@ -393,4 +412,25 @@
     .box {
         min-width: 100px;
     }
+}
+
+@media screen and (min-width:1000px) {
+    .menu-item span {
+        display: unset;
+        margin-left: 10px;
+        ;
+    }
+    .menu-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 20%;
+        padding-right: 10%;
+        padding-top: unset;
+    }
+}
+
+.status>.box:hover {
+    transform: scaleY(1.1);
 }
